@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <!-- displays site properly based on user's device -->
+
+  <link href="./images/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+
+  <title>Frontend Mentor | Fylo data storage component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+      position: absolute;
+      bottom: 0.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .attribution a {
+      color: hsl(229, 43%, 80%);
+    }
+  </style>
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+<main class="page-content">
+  <section class="file-management">
+    <h1><img alt="Fylo" src="./images/logo.svg"/></h1>
+    <div class="file-management__actions shadow">
+      <button title="New document" aria-label="New document" class="file-management__button">
+        <svg height="24" width="20" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12.028 0H2.436A2.387 2.387 0 00.049 2.398L.037 21.583a2.387 2.387 0 002.387 2.398h14.4a2.397 2.397 0 002.398-2.398V7.194L12.028 0zM10.83 8.393V1.8l6.595 6.594h-6.595z"
+            fill="currentColor"/>
+        </svg>
+      </button>
+      <button title="New folder" aria-label="New folder" class="file-management__button">
+        <svg height="20" width="24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M21.6 2.4H12L9.6 0H2.4A2.39 2.39 0 00.012 2.4L0 16.8a2.4 2.4 0 002.4 2.4h19.2a2.4 2.4 0 002.4-2.4v-12a2.4 2.4 0 00-2.4-2.4z"
+            fill="currentColor"/>
+        </svg>
+      </button>
+      <button title="Upload file" aria-label="Upload file" class="file-management__button">
+        <svg height="16" width="24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19.4 6c-.7-3.4-3.7-6-7.4-6-2.9 0-5.4 1.6-6.6 4C2.3 4.4 0 6.9 0 10c0 3.3 2.7 6 6 6h13c2.8 0 5-2.2 5-5 0-2.6-2.1-4.8-4.6-5zM14 9v4h-4V9H7l5-5 5 5h-3z"
+                fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+  </section>
+
+  <section class="storage shadow">
+    <div class="storage__data-left">
+      <h2>185 <span class="storage__data-left--small"><abbr title="Gigabytes" aria-label="gigabytes">GB</abbr> left</span></h2>
+    </div>
+
+    <figure class="storage__information">
+      <figcaption>You’ve used <strong>815 <abbr title="Gigabytes" aria-label="gigabytes">GB</abbr></strong> of your storage</figcaption>
+      <meter max="1000" min="0" value="815"/>
+    </figure>
+
+    <div class="storage__information-labels" aria-hidden="true">
+      <p>0 GB</p>
+      <p>1000 GB</p>
+    </div>
+  </section>
+</main>
+
+<footer class="attribution">
+  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+  Coded by <a href="#">Chris 💛</a>.
+</footer>
+</body>
+</html>

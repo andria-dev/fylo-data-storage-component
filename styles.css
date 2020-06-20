@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;700&display=swap');
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  --meter-background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  --pale-blue: hsl(243, 100%, 93%);
+  --grayish-blue: hsl(229, 7%, 55%);
+  --dark-blue: hsl(228, 56%, 26%);
+  --very-dark-blue: hsl(229, 57%, 11%);
+
+  display: grid;
+  place-items: center;
+  margin: 0;
+
+  color: white;
+  background: var(--very-dark-blue) url("./images/bg-desktop.svg") no-repeat bottom -50% left;
+
+  font-size: 14px;
+  font-family: 'Raleway', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+.page-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.file-management {
+  width: 15rem;
+  padding: 2rem 4rem 2rem 2rem;
+
+  background-color: var(--dark-blue);
+
+  border-radius: 0.75rem;
+  border-top-right-radius: 6rem;
+}
+
+.file-management > h1 {
+  margin-bottom: 2rem;
+}
+
+.file-management__actions {
+  display: flex;
+  width: 100%;
+}
+
+.file-management__button:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.file-management__button {
+  width: 2.5rem;
+  height: 2.5rem;
+
+  color: #697ED4;
+  background-color: var(--very-dark-blue);
+
+  border: none;
+  border-radius: 0.5rem;
+
+  transition: color 0.15s ease-out;
+  cursor: pointer;
+}
+
+.file-management__button:hover,
+.file-management__button:active {
+  color: var(--pale-blue);
+}
+
+.storage {
+  --distance: 2rem;
+  position: relative;
+  padding: 2rem 4rem;
+  margin-left: var(--distance);
+
+  background-color: var(--dark-blue);
+
+  border-radius: 0.75rem;
+}
+
+.storage__data-left {
+  --radius: 0.5rem;
+
+  position: absolute;
+  top: -2.5rem;
+  right: 1.5rem;
+
+  width: 8rem;
+  padding: 0.55rem 1.5rem;
+
+  background-color: #eee;
+  color: black;
+
+  border-radius: var(--radius);
+  border-bottom-right-radius: 0;
+}
+
+.storage__data-left::after {
+  content: '';
+
+  position: absolute;
+  top: calc(100% - 1.35rem);
+  right: 0;
+
+  border-top: 1.25rem solid transparent;
+  border-bottom: 1.25rem solid transparent;
+  border-right: 1.25rem solid #eee;
+}
+
+.storage__data-left > h2 {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-size: 2.5rem;
+}
+
+.storage__data-left--small {
+  margin-left: 0.75rem;
+
+  color: var(--grayish-blue);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.storage__information {
+  width: 25rem;
+  max-width: 30vw;
+  margin: 0;
+}
+
+.storage__information > figcaption {
+  font-weight: 200;
+  margin-bottom: 1rem;
+}
+
+.storage__information > meter {
+  width: 100%;
+}
+
+.storage__information > meter::-webkit-meter-inner-element {
+  display: block;
+  padding: 0.1rem;
+
+  background: var(--very-dark-blue);
+
+  border-radius: 2rem;
+}
+
+.storage__information > meter::-webkit-meter-bar {
+  background: none;
+  border: none;
+}
+
+.storage__information > meter::-webkit-meter-optimum-value {
+  background: var(--meter-background);
+  border-radius: 1rem;
+}
+
+.storage__information-labels {
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 0.75rem;
+}
+
+.shadow {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 799px) {
+  body {
+    background: var(--very-dark-blue) url("./images/bg-mobile.svg") no-repeat;
+    background-size: cover;
+  }
+
+  .page-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: calc(100% - 2rem);
+    padding: 0 1rem;
+  }
+
+  .file-management {
+    width: calc(100% - 6rem);
+    max-width: calc(25rem - 6rem);
+  }
+  .storage {
+    margin-left: 0;
+    margin-top: var(--distance);
+    width: calc(100% - 8rem);
+    max-width: calc(25rem - 8rem);
+  }
+
+  .storage__information {
+    width: unset;
+    max-width: unset;
+  }
+
+  .storage__data-left {
+    top: 100%;
+    left: 50%;
+
+    border-bottom-right-radius: var(--radius);
+    transform: translate(-50%, -50%);
+  }
+  .storage__data-left::after {
+    content: none;
+  }
+}
